@@ -18,17 +18,22 @@ use App\Http\Controllers\Admin\DashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-Route::get('/home', [HomeController::class, 'index'])->name('Home');
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+Route::get('/', [HomeController::class, 'index'])->name('Home');
 Route::get('/details', [DetailsController::class, 'index'])->name('Details');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
 Route::get('/success', [SuccessController::class, 'index'])->name('Success');
 Route::prefix('admin')
     ->namespace('Admin')
+    ->middleware(['auth', 'admin']) // Membuat midlleware untuk mengamankan user_role admin
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
     });
 Route::get('/cobaroute', [TryController::class, 'index']);
+
+// Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
