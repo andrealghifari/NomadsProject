@@ -1,0 +1,29 @@
+body {
+    background-color: #fff;
+    font-family: 'Assistant', sans-serif;
+    color: #071C4D;
+}
+
+.section-success {
+    height: 90vh;
+
+    h1 {
+        font-weight: 500;
+        font-size: 26px;
+    }
+
+    p {
+        font-weight: 400;
+        font-size: 18px;
+    }
+
+    .btn-home-page {
+        border-radius: 4px;
+        background-color: #071C4D;
+        color: #FFFF;
+
+        &:hover {
+            background-color: #0A41C2
+        }
+    }
+}

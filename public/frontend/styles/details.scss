@@ -1,0 +1,213 @@
+body {
+    background-color: #ffff;
+    font-family: 'Assistant', sans-serif;
+    color: #071C4D;
+}
+
+// Navbar
+.navbar-brand {
+    img {
+        max-height: 40px;
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: #071C4D;
+            font-weight: 400;
+
+            &.active {
+                font-weight: 800;
+                color: #071C4D !important;
+            }
+
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important; //tanda important berarti harus diterapkan
+    height: 70px;
+    border-radius: 0; //tidak pakai border
+
+}
+
+.btn-login {
+    background-color: #071C4D;
+    color: white;
+
+    &:hover {
+        background-color: #113B9E;
+        color: white;
+    }
+}
+
+.section-details-header {
+    min-height: 330px;
+    background-color: #E4E6EB;
+    margin-top: -70px;
+}
+
+.section-details-content {
+    margin-top: -210px;
+    min-height: 100vh;
+
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .breadcrumb-item {
+        &.active {
+            font-weight: bold;
+            color: #071C4D;
+        }
+
+    }
+
+    .card-details {
+        padding: 30px;
+        border-radius: 11px;
+
+        .trip-location {
+            font-weight: 200;
+            color: #A4A4A4;
+
+        }
+
+        .member-add {
+            float: left;
+            clear: left;
+        }
+
+        h1 {
+            font-size: 26px;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 300;
+        }
+
+        .features {
+            margin-top: 30px;
+
+            h3 {
+                font-size: 18px;
+                color: #071C4D;
+                margin-bottom: 0;
+            }
+
+            p {
+                font-size: 14px;
+                margin-bottom: 0;
+            }
+
+            .description {
+                overflow: hidden;
+                margin-left: 10px;
+                float: left;
+            }
+
+            .features-image {
+                float: left;
+                height: 45px;
+                width: 45px;
+            }
+        }
+
+        // This is the image gallery
+        .gallery {
+            .xzoom-container {
+                display: block;
+            }
+
+            .xzoom {
+                width: 100%;
+                box-shadow: none;
+                margin-bottom: 10px; //jarak gambar dengan thumbs
+            }
+
+            .xactive {
+                border: 2px solid aqua;
+                box-shadow: none;
+            }
+        }
+    }
+
+    .members {
+        .members-image {
+            padding: 5px;
+            width: 40px;
+            height: 40px;
+        }
+    }
+
+    .card-right {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom: 0px;
+    }
+
+    .trip-information {
+        td.text-right {
+            color: #A4A4A4;
+            font-weight: 300;
+        }
+
+        th.text-left {
+            color: #071C4D;
+            font-weight: 400;
+
+        }
+
+        ;
+
+    }
+
+    .join-container {
+        margin-top: -16px;
+
+        .btn-join-now {
+            background-color: #0800ff;
+            color: white;
+            border-radius: 0px;
+
+            &:hover {
+                background-color: #3F39EB;
+                color: white;
+            }
+        }
+
+    }
+
+}
+
+
+.section-footer {
+    h5 {
+        font-weight: 600;
+    }
+
+    a {
+        color: #051334;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .copyright {
+        font-size: 16px;
+
+
+    }
+}

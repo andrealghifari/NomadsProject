@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Success Checkout</title>
+    <link
+      rel="stylesheet"
+      href="frontend/libraries/bootstrap/css/bootstrap.css"
+    />
+    <link rel="stylesheet" href="frontend/styles/success.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Assistant:200,300,400,700&&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="frontend/libraries/jquery/gijgo/css/gijgo.min.css" />
+  </head>
+  <body>
+    <!-- Semantic elements -->
+    <!-- https://www.w3schools.com/html/html5_semantic_elements.asp -->
+
+    <!-- Bootstrap navbar example -->
+    <!-- https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp -->
+    <div class="container">
+      <nav class="row navbar navbar-expand-lg navbar-light bg-white">
+        <div class="navbar-nav ml-auto mr-auto mr-sm-auto mr-lg-0 mr-md-auto">
+          <a class="navbar-brand" href="index.html">
+            <img src="frontend/images/logo_NOMADS.png" alt="" />
+          </a>
+        </div>
+        <ul class="navbar-nav mr-auto d-none d-lg-block">
+          <li>
+            <span class="text-muted"
+              >| &nbsp; Explore World in Diversity</span
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <main>
+      <div class="section-success d-flex align-items-center">
+        
+        <div class="col text-center">
+          <img src="frontend/images/ic_mail.png" alt="">
+
+          <h1>Yoohoo! <strong> Success</strong></h1>
+          <p> We have sent you an email for the instruction <br>
+            Have a wonderful trip !
+          </p>
+          <a href="index.html" class="btn btn-home-page mt-3 px-5">
+            Home Page
+          </a>
+        </div>
+      </div>
+    </main>
+    <!-- <footer class="section-footer mt-5 mb-4 border-top">
+      <div class="container-fluid">
+        <div
+          class="row border-top justify-content-center align-items-center pt-4"
+        >
+          <div class="col-auto text-gray-500 font-weight-light">
+            2019 Copyright Nomads • All rights reserved • Made in Jakarta
+          </div>
+        </div>
+      </div>
+    </footer> -->
+    <!-- <script src="frontend/libraries/retina/retina.js"></script> -->
+    <!-- jquery di cek lagi coba takut biang masalah, older ver 3.4.1 -->
+    <script src="frontend/libraries/jquery/jquery-3.6.0.min.js"></script>
+    <script src="frontend/libraries/bootstrap/js/bootstrap.js"></script>
+    <script src="frontend/libraries/jquery/gijgo/js/gijgo.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $('.datepicker').datepicker({
+          uiLibrary: 'bootstrap4',
+          icons: {
+            rightIcon: '<img src="frontend/images/checkout/ic_doe.png" alt=""/>'
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

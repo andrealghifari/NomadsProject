@@ -1,0 +1,313 @@
+body {
+    background-color: #ffff;
+    font-family: 'Assistant', sans-serif;
+    color: #071C4D;
+}
+
+// Navbar
+.navbar-brand {
+    img {
+        max-height: 40px;
+
+
+    }
+}
+
+.navbar-light {
+    .navbar-nav {
+        .nav-link {
+            color: #071C4D;
+            font-weight: 400;
+
+            &.active {
+                font-weight: 800;
+                color: #071C4D !important;
+            }
+
+        }
+    }
+}
+
+.btn-navbar-right {
+    margin-top: -10px !important;
+    margin-bottom: -8px !important;
+    margin-right: -18px !important; //tanda important berarti harus diterapkan
+    height: 70px;
+    border-radius: 0; //tidak pakai border
+
+}
+
+.btn-login {
+    background-color: #071C4D;
+    color: white;
+
+    &:hover {
+        background-color: #113B9E;
+        color: white;
+    }
+}
+
+// Header 
+header {
+    margin-top: -68px;
+    padding: 180px 0px 165px;
+    background-image: url('../images/header_pic.jpg');
+    background-size: cover;
+
+    h1,
+    p {
+        color: #ffff;
+
+    }
+
+    h1 {
+        font-family: "Playfair Display";
+        font-weight: normal;
+        font-size: 60px;
+        text-align: center;
+        color: #f9fafc;
+
+    }
+
+    p {
+        font-family: 'Assistant', sans-serif;
+        font-weight: 200;
+        font-size: 22px;
+    }
+
+    .btn.btn-get-started {
+        color: #ffff;
+        background-color: #FF6F00;
+
+        &:hover {
+            color: white;
+            background-color: #ff9100;
+
+        }
+    }
+
+
+}
+
+// Statistics
+.section-stats {
+    margin-top: -50px;
+
+    .stats-detail {
+        padding-top: 15px;
+        background-color: #ffff;
+        padding-left: 40px;
+
+    }
+
+    h2 {
+        font-size: 30px;
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    p {
+        font-size: 20px;
+        font-weight: 300;
+    }
+}
+
+// Wisata Popular
+.section-popular {
+    min-height: 540px;
+    background-color: #051334;
+    margin-top: -50px;
+    margin-bottom: -230px;
+
+    .section-popular-heading {
+        margin-top: 150px;
+
+        h2,
+        p {
+            color: #ffff;
+        }
+
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 32px;
+        }
+
+        p {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 200;
+            font-size: 22px;
+            text-align: center;
+            color: #f9fafc;
+
+        }
+    }
+}
+
+.section-popular-content {
+    .section-popular-travel {
+        .card-travel {
+            min-height: 380px;
+            background-color: rgb(68, 68, 68);
+            color: white;
+            padding: 30px; // Jarak heading dengan batas atas
+            background-size: cover;
+            margin-bottom: 30px;
+
+        }
+
+        .travel-country {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 200;
+            color: white;
+        }
+
+        .travel-location {
+            font-family: 'Assistant', sans-serif;
+            font-weight: 600px;
+            color: white;
+        }
+
+        .travel-button {
+            .btn-travel-details {
+                color: #ffff;
+                background-color: #FF6F00;
+
+                &:hover {
+                    color: white;
+                    background-color: #ff9100;
+
+                }
+            }
+        }
+    }
+
+}
+
+.section-networks {
+    background-color: white;
+    margin-top: -170px;
+    padding-top: 240px;
+    padding-bottom: 50px;
+
+    h2 {
+        font-family: 'Playfair Display', serif;
+        font-weight: 400;
+        font-size: 40px;
+    }
+
+    p {
+        font-family: Assistant;
+        font-weight: 300;
+        font-size: 21px;
+        text-align: left;
+    }
+
+    img {
+        max-width: 100%;
+        font-weight: 200;
+        font-size: 22px;
+    }
+}
+
+.section-testimonial-heading {
+    background: linear-gradient(#fff 0%, #a4a4a4 100%, #a4a4a4 100%);
+    padding-top: 50px;
+    min-height: 550px;
+
+    h2 {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+    }
+
+    p {
+        font-family: 'Assistant', sans-serif;
+        font-weight: normal;
+        font-size: 22px;
+        text-align: center;
+    }
+
+}
+
+.section-testimonial-content {
+    margin-top: -300px;
+    padding-bottom: 50px;
+
+    .card-testimonial {
+        padding: 40px 20px 10px;
+        border-radius: 11;
+        margin-bottom: 20px;
+
+        .testimonial-content {
+            min-height: 260px;
+
+            h3 {
+                font-size: 22px;
+            }
+
+            .testimonial {
+                margin-top: 20px;
+                font-family: Assistant;
+                font-weight: 400;
+                font-size: 16px;
+                text-align: center;
+                color: #6e6e6e;
+                // color: #051334;
+
+            }
+
+            .trip-to {
+                font-weight: normal;
+                font-size: 22px;
+                color: #6e6e6e;
+            }
+
+            margin-left: -20px;
+            margin-right: -20px;
+        }
+    }
+
+    .btn.btn-get-started {
+        color: #ffff;
+        background-color: #0019FF;
+
+        &:hover {
+            color: white;
+            background-color: #3A4DFF;
+
+        }
+    }
+
+    .btn.btn-need-help {
+        color: #ffff;
+        background-color: #071C4D;
+
+        &:hover {
+            color: white;
+            background-color: #0c338d;
+
+        }
+    }
+
+
+}
+
+.section-footer {
+    h5 {
+        font-weight: 600;
+    }
+
+    a {
+        color: #051334;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .copyright {
+        font-size: 16px;
+
+
+    }
+}

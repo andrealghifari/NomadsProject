@@ -1,0 +1,185 @@
+body {
+  background-color: #ffff;
+  font-family: 'Assistant', sans-serif;
+  color: #071C4D;
+}
+
+.navbar-brand img {
+  max-height: 40px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #071C4D;
+  font-weight: 400;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  font-weight: 800;
+  color: #071C4D !important;
+}
+
+.btn-navbar-right {
+  margin-top: -10px !important;
+  margin-bottom: -8px !important;
+  margin-right: -18px !important;
+  height: 70px;
+  border-radius: 0;
+}
+
+.btn-login {
+  background-color: #071C4D;
+  color: white;
+}
+
+.btn-login:hover {
+  background-color: #113B9E;
+  color: white;
+}
+
+.section-details-header {
+  min-height: 330px;
+  background-color: #E4E6EB;
+  margin-top: -70px;
+}
+
+.section-details-content {
+  margin-top: -210px;
+  min-height: 100vh;
+}
+
+.section-details-content .breadcrumb {
+  background-color: transparent;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.section-details-content .breadcrumb-item.active {
+  font-weight: bold;
+  color: #071C4D;
+}
+
+.section-details-content .card-details {
+  padding: 30px;
+  border-radius: 11px;
+}
+
+.section-details-content .card-details .trip-location {
+  font-weight: 200;
+  color: #A4A4A4;
+}
+
+.section-details-content .card-details .member-add {
+  float: left;
+  clear: left;
+}
+
+.section-details-content .card-details h1 {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.section-details-content .card-details h2 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.section-details-content .card-details p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.section-details-content .card-details .features {
+  margin-top: 30px;
+}
+
+.section-details-content .card-details .features h3 {
+  font-size: 18px;
+  color: #071C4D;
+  margin-bottom: 0;
+}
+
+.section-details-content .card-details .features p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.section-details-content .card-details .features .description {
+  overflow: hidden;
+  margin-left: 10px;
+  float: left;
+}
+
+.section-details-content .card-details .features .features-image {
+  float: left;
+  height: 45px;
+  width: 45px;
+}
+
+.section-details-content .card-details .gallery .xzoom-container {
+  display: block;
+}
+
+.section-details-content .card-details .gallery .xzoom {
+  width: 100%;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  margin-bottom: 10px;
+}
+
+.section-details-content .card-details .gallery .xactive {
+  border: 2px solid aqua;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.section-details-content .members .members-image {
+  padding: 5px;
+  width: 40px;
+  height: 40px;
+}
+
+.section-details-content .card-right {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 0px;
+}
+
+.section-details-content .trip-information td.text-right {
+  color: #A4A4A4;
+  font-weight: 300;
+}
+
+.section-details-content .trip-information th.text-left {
+  color: #071C4D;
+  font-weight: 400;
+}
+
+.section-details-content .join-container {
+  margin-top: -16px;
+}
+
+.section-details-content .join-container .btn-join-now {
+  background-color: #0800ff;
+  color: white;
+  border-radius: 0px;
+}
+
+.section-details-content .join-container .btn-join-now:hover {
+  background-color: #3F39EB;
+  color: white;
+}
+
+.section-footer h5 {
+  font-weight: 600;
+}
+
+.section-footer a {
+  color: #051334;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.section-footer .copyright {
+  font-size: 16px;
+}
+/*# sourceMappingURL=details.css.map */
