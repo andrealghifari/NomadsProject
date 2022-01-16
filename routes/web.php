@@ -7,6 +7,9 @@ use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\SuccessController;
 use App\Http\Controllers\TryController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Middleware\Authenticate;
+use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -33,7 +36,7 @@ Route::prefix('admin')
             ->name('dashboard');
     });
 Route::get('/cobaroute', [TryController::class, 'index']);
+Auth::routes(['verify' => true]);
 
 // Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+// Auth::routes();
