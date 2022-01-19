@@ -32,15 +32,14 @@ Route::get('/details', [DetailsController::class, 'index'])->name('Details');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
 Route::get('/success', [SuccessController::class, 'index'])->name('Success');
 
-Route::prefix('admin')
+Route::prefix('admin') // prefix = /admin
     // ->namespace('Admin')
-    ->middleware(['auth', 'admin']) // Membuat midlleware untuk mengamankan user_role admin
+    ->middleware(['auth', 'admin']) // Membuat midlleware untuk mengamankan pages admin
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
         Route::resource('travel-package', TravelPackageController::class);
     });
-
 Auth::routes(['verify' => true]);
 
 Route::get('/cobaroute', [TryController::class, 'index']);

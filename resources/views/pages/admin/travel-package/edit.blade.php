@@ -24,7 +24,7 @@
      @endforeach
     @endif
 
-    <!-- Content Row -->
+<!-- Content Row -->
     <div class="card-shadow">
         <div class="card-body">
             <form action="{{route('travel-package.update', $item->id)}}" method="POST">
@@ -32,7 +32,7 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Title" value="{{$item->title)}}">
+                    <input type="text" class="form-control" name="title" placeholder="Title" value="{{$item->title}}">
                 </div>
 
                 <div class="form-group">
