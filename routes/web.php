@@ -7,8 +7,11 @@ use App\Http\Controllers\DetailsController;
 use App\Http\Controllers\SuccessController;
 use App\Http\Controllers\TryController;
 use App\Http\Controllers\Admin\DashboardController;
-use App\Http\Middleware\Authenticate;
+use App\Http\Controllers\Admin\TravelPackageController;
+// use App\Http\Controllers\Admin\TravelPackageController;
 use Illuminate\Support\Facades\Auth;
+use App\Mail\MailtrapExample;
+use Illuminate\Support\Facades\Mail;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,15 +31,24 @@ Route::get('/', [HomeController::class, 'index'])->name('Home');
 Route::get('/details', [DetailsController::class, 'index'])->name('Details');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
 Route::get('/success', [SuccessController::class, 'index'])->name('Success');
+
 Route::prefix('admin')
-    ->namespace('Admin')
+    // ->namespace('Admin')
     ->middleware(['auth', 'admin']) // Membuat midlleware untuk mengamankan user_role admin
     ->group(function () {
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
+        Route::resource('travel-package', TravelPackageController::class);
     });
-Route::get('/cobaroute', [TryController::class, 'index']);
+
 Auth::routes(['verify' => true]);
 
+Route::get('/cobaroute', [TryController::class, 'index']);
+Route::get('/send-mail', function () {
+
+    Mail::to('newuser@example.com')->send(new MailtrapExample());
+
+    return 'A message has been sent to Mailtrap!';
+});
 // Auth::routes();
 // Auth::routes();
