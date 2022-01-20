@@ -22,18 +22,21 @@
 
     @if ($errors->any())
      @foreach ($errors->all() as $error)
-         <div>{{$error}}</div>
+         <div class="alert alert-danger">{{$error}}</div>
      @endforeach
     @endif
 
-    <!-- Content Row -->
+      <!-- Content Row -->
     <div class="card-shadow">
         <div class="card-body">
             <form action="{{route('travel-package.store')}}" method="POST">
                 @csrf 
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title" placeholder="Title" value="{{old('title')}}">
+                    <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" placeholder="Title" value="{{old('title')}}">
+                    @error('title')
+                        <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">

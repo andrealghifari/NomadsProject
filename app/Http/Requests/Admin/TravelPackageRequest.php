@@ -17,14 +17,14 @@ class TravelPackageRequest extends FormRequest
     }
 
     /**
-     * Get the validpation rules that apply to the request.
+     * Get the validation rules that apply to the request.
      *
      * @return array
      */
     public function rules()
     {
         return [
-            'title' => 'required|max:255',
+            'title' => 'required|unique:travel_packages|max:255',
             'location' => 'required|max:255',
             'about' => 'required',
             'featured_event' => 'required',
@@ -33,6 +33,15 @@ class TravelPackageRequest extends FormRequest
             'duration' => 'required|max:255',
             'type' => 'required|max:255',
             'price' => 'required|integer'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'A title is required ',
+            'title.unique' => 'The title has already been taken, try another one',
+            'price.required' => 'Please give the price trip',
         ];
     }
 }

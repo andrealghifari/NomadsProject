@@ -8,6 +8,7 @@ use App\Http\Controllers\SuccessController;
 use App\Http\Controllers\TryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TravelPackageController;
+use App\Http\Controllers\Admin\GalleryController;
 // use App\Http\Controllers\Admin\TravelPackageController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\MailtrapExample;
@@ -39,6 +40,7 @@ Route::prefix('admin') // prefix = /admin
         Route::get('/', [DashboardController::class, 'index'])
             ->name('dashboard');
         Route::resource('travel-package', TravelPackageController::class);
+        Route::resource('gallery', GalleryController::class);
     });
 Auth::routes(['verify' => true]);
 

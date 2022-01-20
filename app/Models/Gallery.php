@@ -6,18 +6,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class TravelPackage extends Model
+class Gallery extends Model
 {
     // use HasFactory;
     use SoftDeletes;
     protected $fillable = [
-        'title', 'slug', 'location', 'about',
-        'featured_event', 'language', 'foods',
-        'departure_date', 'duration', 'type', 'price'
+        'travel_packages_id', 'image'
     ];
     protected $hidden = [];
-    public function galleries()
+    public function travel_package()
     {
-        return $this->hasmany(Gallery::class, 'travel_packages_id', 'id');
+        return $this->belongsTo(TravelPackage::class, 'travel_packages_id', 'id');
     }
 }
