@@ -1,7 +1,7 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('dashboard')}}">
         {{-- <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
         </div> --}}
@@ -13,8 +13,9 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+        <a class="nav-link" href="{{route('dashboard')}}">
+            {{-- <i class="fas fa-fw fa-tachometer-alt"></i> --}}
+            <i class="fas fa-fw fa-book"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -28,16 +29,16 @@
 
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link " href="#" >
-            <i class="fas fa-fw fa-cog"></i>
+        <a class="nav-link " href="{{route('travel-package.index')}}" >
+            <i class="fas fa-fw fa-plane"></i>
             <span>Travel Package</span>
         </a>
     </li>
 
     <!-- Nav Item - Utilities Collapse Menu -->
     <li class="nav-item">
-        <a class="nav-link " href="#">
-            <i class="fas fa-fw fa-wrench"></i>
+        <a class="nav-link " href="{{route('gallery.index')}}">
+            <i class="fas fa-fw fa-image"></i>
             <span>Gallery</span>
         </a>
         
@@ -45,9 +46,9 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link" href="{{route('transaction.index')}}">
+            <i class="fas fa-wallet"></i>
+            <span>Transactions</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
@@ -67,8 +68,8 @@
 
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
-        <img class="sidebar-card-illustration mb-2" src="backend/img/undraw_rocket.svg" alt="...">
-        <p class="text-center mb-2"><strong>Stay Sharp!</strong></p>
+        <img class="sidebar-card-illustration mb-2" src="{{asset('backend/img/undraw_rocket.svg')}}" alt="...">
+        <p class="text-center mb-2"><strong>Let's grow NOMADS</strong></p>
         {{-- <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a> --}}
     </div>
 
