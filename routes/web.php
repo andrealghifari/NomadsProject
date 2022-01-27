@@ -9,6 +9,7 @@ use App\Http\Controllers\TryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\TravelPackageController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\TransactionController;
 // use App\Http\Controllers\Admin\TravelPackageController;
 use Illuminate\Support\Facades\Auth;
 use App\Mail\MailtrapExample;
@@ -29,7 +30,7 @@ use Illuminate\Support\Facades\Mail;
 //     return view('welcome');
 // });
 Route::get('/', [HomeController::class, 'index'])->name('Home');
-Route::get('/details', [DetailsController::class, 'index'])->name('Details');
+Route::get('/details/{slug}', [DetailsController::class, 'index'])->name('Details');
 Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
 Route::get('/success', [SuccessController::class, 'index'])->name('Success');
 
@@ -41,6 +42,7 @@ Route::prefix('admin') // prefix = /admin
             ->name('dashboard');
         Route::resource('travel-package', TravelPackageController::class);
         Route::resource('gallery', GalleryController::class);
+        Route::resource('transaction', TransactionController::class);
     });
 Auth::routes(['verify' => true]);
 

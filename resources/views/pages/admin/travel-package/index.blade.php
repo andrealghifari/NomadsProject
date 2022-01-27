@@ -41,7 +41,7 @@
                         <td>{{$item->location}}</td>
                         <td>{{$item->type}}</td>
                         <td>{{$item->departure_date}}</td>
-                        <td>{{$item->price}}</td>
+                        <td>Rp. {{$item->price}}</td>
                         <td>
                             <a href="{{route('travel-package.edit', $item->id)}}" class="btn btn-outline-info">                            
                                 <i class="fa fa-pencil-alt"></i>

@@ -5,7 +5,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">Edit Paket Travel {{$item->location}}</h1>  
+        <h1 class="h3 mb-0 text-gray-800">Edit Paket Travel &nbsp; <i>{{$item->travel_package->title}}</i></h1>  
     </div> 
 
     {{-- @if ($errors->any())
@@ -27,23 +27,20 @@
 <!-- Content Row -->
     <div class="card-shadow">
         <div class="card-body">
-            <form action="{{route('gallery.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('transaction.update', $item->id)}}" method="POST">
                 @csrf 
                 @method('PUT')
                 <div class="form-group">
-                    <label for="location">Paket Travel</label>
-                    <select name="travel_packages_id"  required class="form-control">
-                        <option value="{{$item->travel_packages_id}}">
-                            @foreach ($travel_packages as $travel_package)
-                                <option value="{{$travel_package->id}}">{{$travel_package->location}}</option>
-                            @endforeach
-                        </option>
+                    <label for="transactions_status"></label>
+                    <select name="transaction_status" required class="form-control">
+                        <option value="{{$item->transaction_status}}">Jangan ubah {{$item->transaction_status}}</option>
+                        <option value="IN_CART">In Cart</option>
+                        <option value="PENDING">Pending</option>
+                        <option value="FAILED">Failed</option>
+                        <option value="SUCCESS">Success</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" class="form-control" name="image" placeholder="Image">
-                </div>
+
                 <button type="submit" class="btn btn-warning btn-block" > Ubah Data</button>
             </form> 
         </div>

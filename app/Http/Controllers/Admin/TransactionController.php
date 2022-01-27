@@ -3,13 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\GalleryRequest;
-use App\Models\TravelPackage;
-use App\Models\Gallery;
+use App\Models\Transaction;
+use App\Http\Requests\Admin\TransactionRequest;
 use Illuminate\Support\Str;
-// use Illuminate\Http\Request;
 
-class GalleryController extends Controller
+class TransactionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -18,9 +16,12 @@ class GalleryController extends Controller
      */
     public function index()
     {
-        $items = Gallery::with(['travel_package'])->get();
-        return view('pages.admin.gallery.index', [
-            'items' => $items,
+        $items = Transaction::with([
+            'details', 'travel_package', 'user'
+        ])->get();
+
+        return view('pages.admin.transaction.index', [
+            'items' => $items
         ]);
     }
 
@@ -31,10 +32,6 @@ class GalleryController extends Controller
      */
     public function create()
     {
-        $travel_packages = TravelPackage::all();
-        return view('pages.admin.gallery.create', [
-            'travel_packages' => $travel_packages
-        ]);
     }
 
     /**
@@ -43,15 +40,15 @@ class GalleryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(GalleryRequest $request)
+    public function store(TransactionRequest $request)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store(
-            'assets/gallery',
-            'public'
-        );
-        Gallery::create($data);
-        return redirect()->route('gallery.index');
+        $data['slug'] = Str::slug($request->title);
+
+        Transaction::create($data);
+        return redirect()
+            ->route('transaction.index')
+            ->with('success', 'Data baru berhasil ditamnbahkan');
     }
 
     /**
@@ -62,7 +59,10 @@ class GalleryController extends Controller
      */
     public function show($id)
     {
-        //
+        $item = Transaction::with([
+            'details', 'travel_package', 'user'
+        ])->findOrFail($id);
+        return view('pages.admin.transaction.detail', ['item' => $item]);
     }
 
     /**
@@ -73,12 +73,9 @@ class GalleryController extends Controller
      */
     public function edit($id)
     {
-        $item = Gallery::findOrFail($id);
-        $travel_packages = TravelPackage::all();
-
-        return view('pages.admin.gallery.edit', [
-            'item' => $item,
-            'travel_packages' => $travel_packages
+        $item = Transaction::findOrFail($id);
+        return view('pages.admin.transaction.edit', [
+            'item' => $item
         ]);
     }
 
@@ -89,19 +86,14 @@ class GalleryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(GalleryRequest $request, $id)
+    public function update(TransactionRequest $request, $id)
     {
         $data = $request->all();
-        $data['image'] = $request->file('image')->store(
-            'assets/gallery',
-            'public'
-        );
+        $data['slug'] = Str::slug($request->title);
 
-        $item = Gallery::findOrFail($id);
-
+        $item = Transaction::findOrFail($id);
         $item->update($data);
-
-        return redirect()->route('gallery.index');
+        return redirect()->route('transaction.index');
     }
 
     /**
@@ -112,9 +104,8 @@ class GalleryController extends Controller
      */
     public function destroy($id)
     {
-        $item = Gallery::findorFail($id);
+        $item = Transaction::findOrFail($id);
         $item->delete();
-
-        return redirect()->route('gallery.index');
+        return redirect()->route('transaction.index');
     }
 }

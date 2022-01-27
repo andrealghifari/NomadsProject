@@ -10,21 +10,13 @@
             class="fas fa-plus fa-sm text-white-50"></i> Tambah Paket Travel</a>   
     </div> 
 
-    {{-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif --}}
+ 
 
-    @if ($errors->any())
+    {{-- @if ($errors->any())
      @foreach ($errors->all() as $error)
          <div class="alert alert-danger">{{$error}}</div>
      @endforeach
-    @endif
+    @endif --}}
 
       <!-- Content Row -->
     <div class="card-shadow">
@@ -41,47 +33,74 @@
 
                 <div class="form-group">
                     <label for="location">Location</label>
-                    <input type="text" class="form-control" name="location" placeholder="Location" value="{{old('location')}}">
-                </div>
+                    <input type="text" class="form-control @error ('location') is-invalid @enderror" name="location" placeholder="Location" value="{{old('location')}}">
+                    @error('location')
+                    <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
+                    </div>
 
                 <div class="form-group">
                     <label for="about">About</label>
-                    <textarea name="about" rows="10" class="d-block w-100 form-control" >{{old('about')}}</textarea>
+                    <textarea name="about" rows="10" class="d-block w-100 form-control @error ('about') is-invalid @enderror" >{{old('about')}}</textarea>
+                    @error('about')
+                    <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="featured_event">Featured Event</label>
-                    <input type="text" class="form-control" name="featured_event" placeholder="Featured Event" value="{{ old('featured_event') }}">
+                    <input type="text" class="form-control @error ('featured_event') is-invalid @enderror" name="featured_event" placeholder="Featured Event" value="{{ old('featured_event') }}">
+                    @error('featured_event')
+                    <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
                 </div>                
 
                 <div class="form-group">
                     <label for="language">Language</label>
-                    <input type="text" class="form-control" name="language" placeholder="Language" value="{{old('language')}}">
+                    <input type="text" class="form-control @error ('language') is-invalid @enderror" name="language" placeholder="Language" value="{{old('language')}}">
+                    @error('language')
+                    <div class="invalid-feeback">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="foods">Foods</label>
-                    <input type="text" class="form-control" name="foods" placeholder="Foods" value="{{old('foods')}}">
+                    <input type="text" class="form-control @error('foods') is-invalid @enderror" name="foods" placeholder="Foods" value="{{old('foods')}}">
+                    @error('foods')
+                    <div class="invalid-feedback">{{$message}}</div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="departure_date">Departure Date</label>
-                    <input type="date" class="form-control" name="departure_date" placeholder="Departure Date" value="{{ old('departure_date') }}">
+                    <input type="date" class="form-control @error('departure_date') is-invalid @enderror" name="departure_date" placeholder="Departure Date" value="{{ old('departure_date') }}">
+                    @error('departure_date')
+                    <div class="invalid-feedback">{{$message}}</div>                        
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="duration">Duration</label>
-                    <input type="text" class="form-control" name="duration" placeholder="Duration" value="{{old('duration')}}">
+                    <input type="text" class="form-control @error('duration') is-invalid @enderror" name="duration" placeholder="Duration" value="{{old('duration')}}">
+                    @error('duration')
+                    <div class="invalid-feedback"></div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="type">Type</label>
-                    <input type="text" class="form-control" name="type" placeholder="Type" value="{{old('type')}}">
+                    <input type="text" class="form-control @error('type') is-invalid @enderror" name="type" placeholder="Type" value="{{old('type')}}">
+                    @error('type')
+                    <div class="invalid-feedback"></div>
+                    @enderror
                 </div>
 
                 <div class="form-group">
                     <label for="price">Price</label>
-                    <input type="number" class="form-control" name="price" placeholder="Price" value="{{old('price')}}">
+                    <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" placeholder="Price" value="{{old('price')}}">
+                    @error('price')
+                    <div class="invalid-feedback"></div>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary btn-block" > Simpan</button>
             </form> 

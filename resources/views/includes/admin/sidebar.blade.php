@@ -46,9 +46,9 @@
 
     <!-- Nav Item - Charts -->
     <li class="nav-item">
-        <a class="nav-link" href="#">
-            <i class="fas fa-fw fa-chart-area"></i>
-            <span>Charts</span></a>
+        <a class="nav-link" href="{{route('transaction.index')}}">
+            <i class="fas fa-wallet"></i>
+            <span>Transactions</span></a>
     </li>
 
     <!-- Nav Item - Tables -->
@@ -69,7 +69,7 @@
     <!-- Sidebar Message -->
     <div class="sidebar-card d-none d-lg-flex">
         <img class="sidebar-card-illustration mb-2" src="{{asset('backend/img/undraw_rocket.svg')}}" alt="...">
-        <p class="text-center mb-2"><strong>Stay Sharp!</strong></p>
+        <p class="text-center mb-2"><strong>Let's grow NOMADS</strong></p>
         {{-- <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to Pro!</a> --}}
     </div>
 

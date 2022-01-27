@@ -21,7 +21,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                 Travel Packages</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">400</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$travel_package}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-hotel fa-2x text-gray-300"></i>
@@ -39,7 +39,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                 Total Transactions</div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1.45bil</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$total_transactions}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-dollar-sign fa-2x text-gray-300"></i>
@@ -57,7 +57,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Success
                             </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">1000+</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$trans_success}}</div>
 
                         </div>
                         <div class="col-auto">
@@ -76,7 +76,7 @@
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
                                 Pending </div>
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">{{$trans_pending}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="fas fa-loading fa-2x text-gray-300"></i>

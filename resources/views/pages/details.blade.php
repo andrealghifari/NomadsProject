@@ -28,8 +28,8 @@
         <div class="row">
           <div class="col-lg-8 pl-lg-0">
             <div class="card card-details">
-              <h1>Nusa Penida</h1>
-              <p>Island of Indonesia</p>
+              <h1>{{$item->title}}</h1>
+              <p>{{$item->location}}</p>
               <div class="gallery">
                 <div class="xzoom-container">
                   <img src="frontend/images/details_page/bigcapture.jpg" alt=" Nusa Penida Island" class="xzoom"

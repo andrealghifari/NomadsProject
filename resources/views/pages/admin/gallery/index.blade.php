@@ -9,7 +9,14 @@
         <a href="{{ route('gallery.create') }}" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
             class="fas fa-plus fa-sm text-white-50"></i> Tambah Gallery</a>   
     </div>
-
+    @if (session('success')) {
+        <div class="alert alert-success alert-dismissible fade show">
+            {{session('success')}}
+            <button class="btn btn-close" aria-label="Close"></button>
+        </div>
+    }
+        
+    @endif
     <!-- Content Row -->
     <div class="row">
         <div class="card-body">
@@ -28,9 +35,9 @@
                        @forelse ($items as $item)
                        <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->travel_packages->title}}</td>
+                        <td>{{$item->travel_package->location}}</td>
                         <td>
-                            <img src="{{Storage::url($item->image)}}" alt="" style="150px" class="img-thumbnail"> 
+                            <img src="{{Storage::url($item->image)}}" alt="" style="height:200px" class="img-thumbnail"> 
                         </td>
                       
                         <td>

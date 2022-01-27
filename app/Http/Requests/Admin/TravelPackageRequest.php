@@ -42,6 +42,8 @@ class TravelPackageRequest extends FormRequest
             'title.required' => 'A title is required ',
             'title.unique' => 'The title has already been taken, try another one',
             'price.required' => 'Please give the price trip',
+            'price.integer' => 'Please input integer datatype'
+
         ];
     }
 }

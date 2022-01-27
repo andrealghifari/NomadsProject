@@ -10,33 +10,25 @@
             class="fas fa-plus fa-sm text-white-50"></i> Tambah Paket Travel</a>   
     </div> 
 
-    {{-- @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
-    </div>
-    @endif --}}
-
+    <!-- Content Row -->
     @if ($errors->any())
      @foreach ($errors->all() as $error)
          <div>{{$error}}</div>
      @endforeach
     @endif
-    <!-- Content Row -->
+
     <div class="card-shadow">
         <div class="card-body">
             <form action="{{route('gallery.store')}}" method="post" enctype="multipart/form-data">
                 @csrf 
                 <div class="form-group">
-                    <label for="travel_package">Travel Packages</label>
-                    <select name="travel_package" required class="form-control" id="">
+                    <label for="location">Travel Packages</label>
+                    <select name="travel_packages_id" required class="form-control">
                         <option value="">Select data</option>
                         @foreach ($travel_packages as $travel_package)
-                            <option value="{{$travel_package->id}}">{{$travel_package->title}}</option>
+                            <option value="{{$travel_package->id}}">{{$travel_package->location}}</option>
                         @endforeach
+                        
                     </select>
                 </div>
                 <div class="form-group">

@@ -24,8 +24,15 @@ class GalleryRequest extends FormRequest
     public function rules()
     {
         return [
-            'travel_packages_id' => 'required|integer' | 'exists:travel_packages,id',
-            'image' => 'required|image'
+            'travel_packages_id' => 'required|integer|exists:travel_packages,id',
+            'image' => 'required|image',
+        ];
+    }
+    public function messages()
+    {
+        return [
+            'travel_packages_id.required' => 'You have to choose the Travel Package',
+            'image.required' => 'Please upload the image for Travel Package'
         ];
     }
 }
