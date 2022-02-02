@@ -28,14 +28,13 @@
                             <th>Travel</th>
                             <th>Gambar</th>
                             <th>Action</th>
-
                         </tr>
                     </thead>
                     <tbody>
                        @forelse ($items as $item)
                        <tr>
                         <td>{{$item->id}}</td>
-                        <td>{{$item->travel_package->location}}</td>
+                        <td>{{$item->travel_package->title }}</td>
                         <td>
                             <img src="{{Storage::url($item->image)}}" alt="" style="height:200px" class="img-thumbnail"> 
                         </td>
