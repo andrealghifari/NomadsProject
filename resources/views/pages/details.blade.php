@@ -55,41 +55,10 @@
                     id="xzoom-default" xoriginal="frontend/images/details_page/bigcapture.jpg"> 
                     </div>
                     --}}
-                
-                <div class="xzoom-thumbs">
-                  <a href="{{url('frontend/images/details_page/jumbotron1.jpg')}}">
-                    <img src="{{url('frontend/images/details_page/jumbotron1.jpg')}}" alt="" class="xzoom-gallery" width="128"
-                      xpreview="{{url('frontend/images/details_page/jumbotron1.jpg')}}">
-                  </a>
-                  <a href="{{url('frontend/images/details_page/jumbotron2.jpg')}}">
-                    <img src="{{url('frontend/images/details_page/jumbotron2.jpg')}}" alt="" class="xzoom-gallery" width="128"
-                      xpreview="{{url('frontend/images/details_page/jumbotron2.jpg')}}">
-                  </a>
-                  <a href="{{url('frontend/images/details_page/jumbotron3.jpg')}}">
-                    <img src="{{url('frontend/images/details_page/jumbotron3.jpg')}}" alt="" class="xzoom-gallery" width="128"
-                      xpreview="{{url('frontend/images/details_page/jumbotron3.jpg')}}">
-                  </a>
-                  <a href="{{url('frontend/images/details_page/jumbotron4.jpg')}}">
-                    <img src="{{url('frontend/images/details_page/jumbotron4.jpg')}}" alt="" class="xzoom-gallery" width="128"
-                      xpreview="{{url('frontend/images/details_page/jumbotron4.jpg')}}">
-                  </a>
-                  {{-- <a href="{{url('')}}">
-                    <img src="{{url('')}}" alt="" class="xzoom-gallery" width="128"
-                      xpreview="{{url('')}}">
-                  </a> --}}
-                </div>
-              
+               
               <h2>Tentang Wisata</h2>
               {!! $item->about !!}
-              <p>Nusa Penida is an island South-East of the Indonesian island Bali. It only takes a thirty minute boat
-                ride from Bali.
-                The island’s landscape is wonderful, the diving spots are world class and its people are very welcoming.
-                Until recently, the island was still relatively unknown by tourists.
-              </p>
-              <p>Nusa Penida island belongs to the Bali province in Indonesia.
-                It has a population of around 45,000 inhabitants and covers about 200 km
-               <sup>2</sup> .
-              </p>
+            
               <div class="features row">
                 <div class="col-md-4">
                   <div class="description">
@@ -97,7 +66,7 @@
                   </div>
                   <div class="description">
                     <h3>Featured Event</h3>
-                    <p>Tari Kecak</p>
+                    <p>{{$item->featured_event}}</p>
                   </div>
                 </div>
                 <div class="col-md-4 border-left ">
@@ -108,7 +77,7 @@
                   </div>
                   <div class="description">
                     <h3>Language</h3>
-                    <p>English</p>
+                    <p>{{$item->language}}</p>
                   </div>
                 </div>
                 <div class="col-md-4 border-left ">
@@ -118,7 +87,7 @@
                   </div>
                   <div class="description">
                     <h3>Foods</h3>
-                    <p>Domestic Foods</p>
+                    <p>{{$item->local_foods}}</p>
                   </div>
                 </div>
               </div>
@@ -140,26 +109,35 @@
               <table class="trip-information">                                                                                                                                                     
                 <tr>
                   <th width="50%" class="text-left">Date of Departure</th>
-                  <td width="50%" class="text-right">22, December 2021</td>
+                  <td width="50%" class="text-right">
+                    {{ \Carbon\Carbon::create($item->date_of_departure)->format('F n, Y')}}
+                  </td>
                 </tr>
                 <tr>
-                  <th width="50%" class="text-left">Flight</th>
-                  <td width="50%" class="text-right">3D 4N</td>
+                  <th width="50%" class="text-left">Flight Duration</th>
+                  <td width="50%" class="text-right">{{$item->duration}}</td>
                 </tr>
                 <tr>
                   <th width="50%" class="text-left">Type of Trip</th>
-                  <td width="50%" class="text-right">Open Trip</td>
+                  <td width="50%" class="text-right">{{$item->type}}</td>
                 </tr>
                 <tr>
                   <th width="50%" class="text-left">Price</th>
-                  <td width="50%" class="text-right">$75.00/person</td>
+                  <td width="50%" class="text-right">{{$item->price}},00/person</td>
                 </tr>
               </table>
             </div>
             <div class="join-container">
-              <a href="{{route('Checkout')}}" class="btn btn-block btn-join-now mt-3 py-2">
-                Join Trip
-              </a>
+             @auth
+                <form action="" method="post">
+                  <button class="btn-block btn-join-now mt-3 py-2" type="submit">
+                    
+                  </button>
+                </form>
+             @endauth
+             @guest
+                 
+             @endguest
             </div>
           </div>
         </div>

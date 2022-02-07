@@ -31,7 +31,12 @@ use Illuminate\Support\Facades\Mail;
 // });
 Route::get('/', [HomeController::class, 'index'])->name('Home');
 Route::get('/details/{slug}', [DetailsController::class, 'index'])->name('Details');
-Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
+// Route::get('/checkout', [CheckoutController::class, 'index'])->name('Checkout');
+Route::get('/checkout/{id}', [CheckoutController::class, 'index'])->name('Checkout')->middleware(['auth', 'verified']);
+Route::post('/checkout/{id}', CheckoutController::class, 'process')->name('CheckoutProcess')->middleware(['auth', 'verified']);
+
+
+
 Route::get('/success', [SuccessController::class, 'index'])->name('Success');
 
 Route::prefix('admin') // prefix = /admin

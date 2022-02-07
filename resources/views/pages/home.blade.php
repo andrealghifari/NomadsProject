@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('title','Home Page')
-
-    
-@section('content')
+{{-- kasih icon disini --}}
+@section('content') 
 <header class="text-center">
     <h1>
       Explore Vast Destination 
